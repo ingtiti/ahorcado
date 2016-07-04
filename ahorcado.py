@@ -2,6 +2,8 @@ from six import print_ as xprint
 from six.moves import input
 import random
 
+# Graficos de ahorcado
+#Utilizo QUEMANDOSE para evitar conflictos con nombres de variables
 QUEMANDOSE = ['''
   +---+
   |   |
@@ -54,10 +56,9 @@ QUEMANDOSE = ['''
 =========''']
 
 #Conjunto de palabras para el juego
-
 words = ('pato oso camello gato cobra jaguar lobo aguila perro coyote '
          'mono rana canario perico leon llama tiburon raton conejo '
-         'salmon tigre python ganso tortuga pavo ballena zebra buho '
+         'salmon tigre serpiente ganso tortuga pavo ballena zebra buho '
          'hormiga cabra ').split()
 
 
@@ -85,6 +86,7 @@ class Ahorcado:
             xprint(letra, end=' ')
         xprint()
 
+        #Convierte letras en espacios, segun palabra secreta
         blanks = '_' * len(self._palabra_secreta)
 
         # remplaza los espacios con la letra adivinada
@@ -176,7 +178,7 @@ def play_again():
     Returns True si el jugador desea repetir juego, Falso de lo contrario
     """
 
-    xprint('Quiere jugar otra vez? (si or no)')
+    xprint('Quieres jugar otra vez? (si o no)')
     return input().lower() == 'si'
 
 
